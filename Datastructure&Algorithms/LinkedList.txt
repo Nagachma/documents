@@ -1,0 +1,67 @@
+
+[data|addressofnextnode]-->[data|addressofnextnode]-->[data|addressofnextnode]-->[data|NULL]
+
+[data|addressofnextnode] === Node
+
+            1300         1400       1500
+[10|1300]-->[20|1400]-->[50|1500]-->[60|NULL]
+
+
+[10|1300] === Head
+
+
+1)creating linked list
+
+create class with 2 variables that is data and next
+
+class Node:
+    def __init__(self,data,):
+        self.data = data
+        #Next initially it should be None bcz sometimes may be 1 node 
+        self.next = None
+
+2)we have to link the one node to another node for that purpose we have to create a class
+
+head is the pointing first element of the linked list and we should not change
+
+
+class SLL:
+	def __init__(self):
+		self.head = None
+
+3)
+
+L=SLL()
+n1=Node(10)
+                             data next  
+#now the node is created like[10|None]
+
+Now the node is to assign to head
+
+self.head = n1
+
+now create one more node 
+
+n2 = Node(20)
+                              data next
+#now the node is created like[20|None]
+
+now we have to address the n2 node to n1 node
+
+n1.next = n2   #[10|1200] [1200|20]
+
+n3 = Node(30)
+
+n2.next = n3
+
+
+4) display that linked list
+
+for that we have to take one temparovary variable and that variable should travel from first to last
+def display():
+	temp = self.head 		# this is first node
+	if self.head is None  		# means there is no node
+		print(empty)
+	while temp:
+		print(temp.data)
+		temp = temp.next

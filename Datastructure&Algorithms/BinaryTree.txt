@@ -1,0 +1,12 @@
+Tree has nodes , edges 
+
+n.of nodes = n-1 edges
+
+n=8 nodes
+e = 7 edges
+
+Binary Tree = Every node in a tree should have atmost 2 childerns 
+
+left side value is lesser and right side value is greater of node
+
+we can not insert duplicat evalues 

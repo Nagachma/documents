@@ -1,0 +1,31 @@
+Recursion
+Intro to DS and Algo
+Analysis of Algorithm
+Arrays
+Lists
+Tuples
+Dictionaries
+Stack
+Queue
+Linked Lists
+Doubly Linked Lists
+Circular Singly Linked List
+Circular Doubly Linked List
+Tree/Binary Tree
+Binary Search Tree
+AVL Tree
+Circular Singly Linked List
+Circular Doubly Linked List
+Binary Heap
+Trie
+Hashing
+Sorting Algorithms
+Searching Algorithms
+Single-Source Shortest Path
+Topological Sort
+Graphs
+Dijkstra’s
+Bellman-Ford’s
+All Pair Shortest Path
+Minimum Spanning Tree
+Kruskal & Prim’s
