@@ -1,0 +1,7 @@
+ord(): It converts the given string of length one, returns an integer representing the Unicode code point of the character.
+ For example, ord(‘a’) returns the integer 97. 
+
+name = "mallela"
+
+for i in name:
+    print(i,"value is:",ord(i))

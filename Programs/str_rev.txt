@@ -1,0 +1,14 @@
+take end letter of string and add it to empty string
+
+
+s = "mphasis technologies"
+
+s_len = len(s)
+
+s_new = ""
+
+while s_len>0:
+    s_new=s_new+s[s_len-1]
+    s_len = s_len-1
+    
+print(s_new)

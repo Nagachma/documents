@@ -1,0 +1,10 @@
+sequence datatype 
+
+List 
+String
+Tuple
+
+max()
+min()
+saquence.sort()
+sorted(sequence)

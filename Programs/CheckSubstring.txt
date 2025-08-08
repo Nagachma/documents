@@ -1,0 +1,27 @@
+#find() function returns -1 if it is not found, else it returns the first occurrence
+
+1)
+
+p = "welcome to python"
+if (p.find(ip)==-1):
+    print("there is no string")
+else:
+    print("there is a string")
+
+2)
+
+p = "welcome to python"
+l1 = p.split(" ")
+
+if ip in l1:
+    print("there is a value")
+
+3)
+p = "welcome to python"
+l1 = p.split(" ")
+
+for i in l1:
+    if ip == i:
+        print("there is a value it is:",i)
+    else:
+        print("there is no value")

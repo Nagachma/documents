@@ -1,0 +1,16 @@
+p = "my name is mallela nagababu"
+
+ss = p.split(" ")
+
+ln = len(ss)-1
+
+estr = ""
+
+el = []
+
+while ln>=0:
+    el.append(ss[ln]+" ")
+    ln = ln-1
+
+print(el)
+print(estr.join(el))

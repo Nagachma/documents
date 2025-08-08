@@ -1,0 +1,97 @@
+def factorial(n):
+    if n == 0:
+        result = 1
+    else:
+        result = n * factorial(n - 1)
+    return result
+
+
+1. factorial(3) is called
+n is 3.
+The condition n == 0 (3 == 0) is false.
+The else block is executed: result = 3 * factorial(2).
+At this point, factorial(3) cannot proceed until it knows the result of factorial(2). It effectively "pauses" and places itself onto the call stack, along with its current state (including the value of n=3 and the calculation it's waiting to complete).
+A new function call for factorial(2) is initiated. 
+
+2. factorial(2) is called
+n is 2.
+The condition n == 0 (2 == 0) is false.
+The else block is executed: result = 2 * factorial(1).
+factorial(2) also pauses, waiting for factorial(1) to return a value. It's added to the call stack on top of factorial(3).
+A new function call for factorial(1) is initiated. 
+
+3. factorial(1) is called
+n is 1.
+The condition n == 0 (1 == 0) is false.
+The else block is executed: result = 1 * factorial(0).
+factorial(1) pauses, waiting for factorial(0) to return a value, and is placed onto the call stack.
+A new function call for factorial(0) is initiated. 
+
+4. factorial(0) is called (Base Case!)
+n is 0.
+The condition n == 0 (0 == 0) is true.
+The if block is executed: result = 1.
+factorial(0) has reached the base case and does not make any further recursive calls. It returns its result, which is 1. 
+
+5. Returning values and unwinding the stack
+The value 1 is returned from factorial(0) to factorial(1).
+factorial(1) resumes. It now has the result it was waiting for (factorial(0)).
+It completes its calculation: result = 1 * 1, which is 1.
+factorial(1) returns 1.
+The value 1 is returned to factorial(2).
+factorial(2) resumes. It now has the result it was waiting for (factorial(1)).
+It completes its calculation: result = 2 * 1, which is 2.
+factorial(2) returns 2.
+The value 2 is returned to factorial(3).
+factorial(3) resumes. It now has the result it was waiting for (factorial(2)).
+It completes its calculation: result = 3 * 2, which is 6.
+factorial(3) returns 6. 
+
+Final Result: The original call to factorial(3) ultimately returns 6. 
+
+
+
+##########################################################
+
+
+# factorial(3) = no values [will be in stack]
+# factorial(2) = no values [will be in stack]
+# factorial(1) = no value  [will be in stack]
+# factorial(0) = 1
+# result = 1
+# factorial(1) = 1 * factorial(0) which is 1*1 [stack value retrieved]
+# factorial(2) = 2 * factorial(1) which is 2*1 [stack value retrieved]
+# factorial(3) = 3 * factorial(2) which is 3 * 2 [stack value retrieved]
+
+#########################################################
+
+
+
+
+
+
+
+
+there are 3 steps 
+
+1)divide the big problem into small and simple problem
+2)find a base conditon with simple answer
+3)return or rollback answer for base condition to solve all sub problems
+
+
+5+find sum of numbers from 1 to 4
+4+find sum of numbers from 1 to 3
+3+find sum of numbers from 1 to 2
+2+find sum of numbers from 1 to 1
+find sum of numbers from 1 to 4
+
+5+10 = 15
+4+6 = 10
+3+3 = 6
+2+1 = 3
+
+
+
+
+
+

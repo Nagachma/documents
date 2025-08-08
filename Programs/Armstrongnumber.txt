@@ -1,0 +1,20 @@
+Input : 153
+Output : Yes
+153 is an Armstrong number.
+1*1*1 + 5*5*5 + 3*3*3 = 153
+
+
+
+n = "153"
+res = 0
+
+
+for i in n:
+    k = 1
+    ln = len(n)
+    while ln>=1:
+        k = k * int(i)
+        ln = ln - 1
+        print(k)
+    res = res+k
+print(res)

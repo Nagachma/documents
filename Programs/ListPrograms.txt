@@ -1,0 +1,109 @@
+#Python program to interchange first and last elements in a list
+
+l1 = [12, 35, 9, 56, 24]
+
+ln = len(l1)-1
+
+temp = l1[0]
+l1[0] = l1[ln]
+l1[ln] = temp
+
+print(l1)
+
+
+or
+
+l1 = [12, 35, 9, 56, 24]
+
+ln = len(l1)-1
+
+lfirst = l1[0]
+
+llast = l1[ln]
+
+ln = len(l1)-1
+l1[0] = llast
+l1[ln] = lfirst
+
+print(l1)
+
+==============================
+
+# Python3 program to multiply all values in the
+# list using lambda function and reduce()
+
+from functools import reduce
+list1 = [1, 2, 3]
+list2 = [3, 2, 4]
+
+
+result1 = reduce((lambda x, y: x * y), list1)
+result2 = reduce((lambda x, y: x * y), list2)
+print(result1)
+print(result2)
+=============================
+
+#The original list is : [12, 67, 98, 34]
+
+#List Integer Summation : [3, 13, 17, 7]
+
+l1 = [12, 67, 98, 34]
+
+el = []
+
+for i in l1:
+    sum = 0
+    si = str(i)
+    for j in si:
+        sum = sum+int(j)
+    el.append(sum)
+print(el)
+
+=================================
+
+list1 = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+
+list2 = [ 0,   1,   1,    0,   1,   2,   2,   0,   1]
+
+Op = ['a', 'd', 'h', 'b', 'c', 'e', 'i', 'f', 'g']
+
+edict = {}
+
+ln = len(list2)-1
+
+
+i = 0
+while ln>=0:
+    edict[list1[i]] = list2[i]
+    i = i+1
+    ln = ln-1
+#print(edict)
+
+sd = {k:v for k,v in (sorted(edict.items(),key=lambda item: item[1]))}
+
+l1 = [k for k in sd.keys()]
+print(l1)
+
+===============================================
+
+list2 = [ 0,   1,   1,    0,   1,   2,   2,   0,   1]
+
+o/p: [[0, 1, 1, 0, 1], [2, 2, 0, 1]]
+
+nl = []
+ln = len(list2)
+
+def chunk():
+    for i in range(0,ln,5):
+        yield list2[i:i+5]
+print(list(chunk()))
+
+
+=======================================================
+
+How to convert a list to a dictionary with indexes as values
+
+a = [2,3,4,1,7]
+
+d = {k:v for v,k in enumerate(a)}
+zd = dict(zip(a, range(len(a))))

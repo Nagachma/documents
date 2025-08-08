@@ -1,0 +1,24 @@
+1)Travel all values one by one while travelling compare first travelled value with remaining all other values whether it is max or not if it is max 
+
+then then store value as max if not go for next value for compare
+
+
+
+ex:
+
+l1 = [3,1,5,7,2,1]
+nl = []
+ln = len(l1)-1
+
+while ln>=0:
+    i = 0
+    max = l1[i] #first travelled value
+    for i in l1:
+        if i<max:  # comparing first travelled value with other values
+            max = i
+    nl.append(max)
+    l1.remove(max)
+    ln = ln-1
+    i = i+1
+
+print(nl)

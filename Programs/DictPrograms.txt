@@ -1,0 +1,150 @@
+#Extract Unique values dictionary values
+
+test_dict = {'gfg' : [5, 6, 7, 8],
+             'is' : [10, 11, 7, 5],
+             'best' : [6, 12, 10, 8],
+             'for' : [1, 2, 5]}
+
+#The unique values list is :
+op =  [1, 2, 5, 6, 7, 8, 10, 11, 12]
+
+el = []
+
+rdel = []
+for i in test_dict.values():
+    el.extend(i)
+
+for i in el:
+    if i not in rdel:
+        rdel.append(i)
+rdel.sort()
+
+print(rdel)
+
+===========================================
+
+sorting in dict:
+
+lis = [{ "name" : "Nandini", "age" : 20},
+{ "name" : "Manjeet", "age" : 20 },
+{ "name" : "Nikhil" , "age" : 19 }]
+
+
+test_dict = {"Arushi" : 22, "Anuradha" : 23, "Mani" : 21, "Haritha" : 25}
+
+test_dict1 = sorted(test_dict.items(),key=lambda item :item[0])
+
+print(test_dict1)
+
+test_dict2 = sorted(test_dict.items(),key=lambda item :item[1])
+
+print(test_dict2)
+
+test_dict3 = sorted(lis,key=lambda i :(i["name"],i["age"]))
+
+print(test_dict3)
+
+test_dict = {"Arushi" : 22, "Anuradha" : 23, "Mani" : 21, "Haritha" : 25}
+
+re = max(test_dict.values())
+
+re = max(test_dict.keys())
+
+re = max(test_dict())
+
+
+=============================================================
+
+Convert key-values list to flat dictionary
+
+test_dict = {'month' : [1, 2, 3],
+             'name' : ['Jan', 'Feb', 'March']}
+
+res = dict(zip(test_dict["name"],test_dict["month"]))
+
+print(res)
+
+
+
+===============================================
+
+
+edic = {'a': 1, 'c': 2, 'e': 2, 'n': 1, 't': 1, 'u': 1, 'r': 1}
+k = sorted(edic.keys())
+
+sk = list(k)
+
+v = sorted(edic.values())
+
+sv = list(v)
+
+print(sk,sv)
+
+ndic = dict(zip(sk,sv))
+
+print(ndic)
+
+
+=======================================================
+
+
+import idlelib.configdialog
+
+a= [{"somethining":"some","new":[{"nme":"nag","id":"mallela","loc":"hyderabad"}]}]
+
+op = {}
+
+od = a[0]
+
+#od = {'somethining': 'some', 'new': [{'nme': 'nag', 'id': 'mallela', 'loc': 'hyderabad'}]}
+print(od)
+
+keys = list(od.keys())
+
+print("keys are ",keys[0])
+op.update({keys[0]:od[keys[0]]})
+
+for i,j in od.items():
+    print("#########", j)
+    if isinstance(j,list):
+        for k in j:
+            op.update(k)
+    for j in i:
+        #print("j value is",j)
+        if j is type(list):
+            print(j)
+
+print("op val is",op)
+
+
+
+========================================
+
+
+l = [1,1,1,2,2,4,6,6,6,6]
+
+
+o/p = 3 =1 , 2=2,1=4,4=6
+
+
+
+def fun(num=None):
+    ed = {}
+    for i in l:
+        if i not in ed.keys():
+            ed[i] = 1
+        else:
+            ed[i] = ed[i]+1
+    print(ed)
+    nd = {}
+    k = list(ed.keys())
+    v = list(ed.values())
+    nd = dict(zip(v,k))
+    print(nd[num])
+
+a = int(input("enter a number:"))
+fun(a)
+
+
+
+

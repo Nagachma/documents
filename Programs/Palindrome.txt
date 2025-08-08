@@ -1,0 +1,15 @@
+# A Palindrome no. is the number that remains the same when its digits get reversed ex:121
+
+
+l1 = "121"
+
+ln = len(l1)-1
+nl = ""
+
+while ln>=0:
+    nl= nl+l1[ln]
+    ln = ln-1
+if l1==nl:
+    print("this is a palindrome number")
+else:
+    print("this is not a palindrome")

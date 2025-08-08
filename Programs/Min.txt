@@ -1,0 +1,47 @@
+The min() function returns the smallest item in an iterable(String ,list,Tuple,dictionary). It can also be used to find the smallest item between two or more parameters.
+
+
+Ex 1)
+numbers = [9, 34, 11, -4, 27]
+
+# find the smallest number
+min_number = min(numbers)
+print(min_number)
+
+# Output: -4
+
+Ex 2): Get the smallest item in a list
+
+number = [3, 2, 8, 5, 10, 6]
+smallest_number = min(number);
+
+print("The smallest number is:", smallest_number)
+
+Ex :3)The smallest string in a list
+
+languages = ["Python", "C Programming", "Java", "JavaScript"]
+smallest_string = min(languages);
+
+print("The smallest string is:", smallest_string)
+
+Ex :4)min() in dictionaries: n the case of dictionaries, min() returns the smallest key. Let's use the key parameter so that we can find the dictionary's key having the smallest value.
+
+square = {2: 4, 3: 9, -1: 1, -2: 4}
+
+# the smallest key
+key1 = min(square)
+print("The smallest key:", key1)    # -2
+
+# the key whose value is the smallest
+key2 = min(square, key = lambda k: square[k])
+
+print("The key with the smallest value:", key2)    # -1
+
+# getting the smallest value
+print("The smallest value:", square[key2])    # 1
+
+Ex:5) min() without iterable
+
+
+result = min(4, -5, 23, 5)
+print("The minimum number is:", result)

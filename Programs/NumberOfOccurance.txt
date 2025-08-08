@@ -1,0 +1,40 @@
+#Python Program to Count the Number of Occurrence of a each Character in String
+
+1)by using counter method
+
+from collections import Counter
+
+s = "programizz"
+
+a = Counter(s)
+
+print(a)
+
+o/p : Counter({'r': 2, 'z': 2, 'p': 1, 'o': 1, 'g': 1, 'a': 1, 'm': 1, 'i': 1})
+
+2)by using dict 
+ i)with get(): get method will give the corresponing value of key 
+
+get() method is used to check the previously occurring character in string, if its new, 
+it assigns 0 as initial and appends 1 to it, else appends 1 to previously holded value of that element in dictionary.
+
+s = "programizz"
+
+dictt = {}
+
+for i in s:
+    dictt[i] = dictt.get(i,0)+1
+print(dictt)
+	
+ ii)without get()
+
+s = "programizz"
+
+dictt = {}
+
+for i in s:
+    if i not in dictt.keys():
+        dictt[i] = 1
+    else:
+        dictt[i] = dictt[i] +1
+print(dictt)

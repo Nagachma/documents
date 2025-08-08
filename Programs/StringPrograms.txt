@@ -1,0 +1,125 @@
+#Check if a variable is string
+
+res = isinstance("mall", str)
+
+print(res)#		TRUE
+
+
+
+# Input : str1 = 'abcdef'
+#         str2 = 'defghia'
+
+# Output : 4
+# (i.e. matching characters :- a, d, e, f)
+
+
+
+
+str1 = 'abcdef'
+str2 = 'defghia'
+
+el = []
+for i in str1:
+    if i in str2:
+        el.append(i)
+
+print(el)
+
+
+======================
+
+
+# Input : geeksforgeeks
+# Output : Not Accepted
+# All vowels except 'o' are not present
+#
+# Input : ABeeIghiObhkUul
+# Output : Accepted
+# All vowels are present
+
+istr = "ABeeIghiObhkUul".lower()
+
+con = "aeiou"
+
+for i in con:
+    if i in istr:
+        print("condition satisfied")
+    else:
+        print("condition failed")
+
+
+
+===============================
+
+# Input : A = "Geeks for Geeks"
+#         B = "Learning from Geeks for Geeks"
+# Output : ['Learning', 'from']
+
+str1 = "Geeks for Geeks"
+str2 = "Learning from Geeks for Geeks"
+
+l1 = str1.split(" ")
+l2 = str2.split(" ")
+
+el = []
+for i in l2:
+    if i not in l1:
+        el.append(i)
+
+print(el)
+
+===================================
+
+
+# The original string is : Geeksforgeeks is best for geeks and CS
+# String after multiple replace : Geeksforgeeks is gfg gfg geeks and gfg
+
+Ip = "Geeksforgeeks is best for geeks and CS"
+
+word_list = ["best", 'CS', 'for']
+
+repl_wrd = 'gfg'
+
+
+ipn = Ip.split(" ")
+
+el = []
+for i in ipn:
+    if i in word_list:
+       i = "gpg"
+       el.append(i+" ")
+    else:
+        el.append(i+" ")
+estr = ""
+
+print(estr.join(el))
+
+
+or
+
+res = ' '.join([repl_wrd if idx in word_list else idx for idx in Ip.split()])
+
+=====================================================
+
+#Permutation of a given string using inbuilt function
+
+from itertools import permutations
+
+a = "abc"
+
+per  = permutations(a)
+
+for i in per:
+    print(i)
+
+
+====================================================
+
+import re
+res = re.findall('\d+', 'xyz123abc456def789')
+['123', '456', '789']
+
+
+
+
+

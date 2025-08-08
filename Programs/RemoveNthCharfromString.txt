@@ -1,0 +1,8 @@
+p = "mallela"
+
+l2 = []
+for i in p:
+    l2.append(i)
+ip = int(input("enter a number:"))
+print(l2.remove(l2[ip]))
+print(l2)
