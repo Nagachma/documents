@@ -1,0 +1,77 @@
+Simply speaking, a generator is a function that returns an object (iterator) which we can iterate over (one value at a time).
+ You can think of generators as returning multiple items, as if they return a list, but instead of returning them all at once they return them one-by-one, and the generator function is paused until the next item is requested
+
+
+
+**** if generator iteration is completed and we are trying to get another iteration then we will get Stopiteration error*******
+
+
+# A simple generator function
+def my_gen():
+    n = 1
+    print('This is printed first')
+    # Generator function contains yield statements
+    yield n
+
+    n += 1
+    print('This is printed second')
+    yield n
+
+    n += 1
+    print('This is printed at last')
+    yield n
+ a = my_gen()
+
+ next(a)
+
+
+# function version
+def fibon(n):
+    a = b = 1
+    result = []
+    for i in xrange(n):
+        result.append(a)
+        a, b = b, a + b
+    return result
+You can more easily write the function as this:
+
+# generator version
+def fibon(n):
+    a = b = 1
+    for i in xrange(n):
+        yield a
+        a, b = b, a + b
+The function is clearer. And if you use the function like this:
+
+for x in fibon(1000000):
+    print x,
+
+Example2)
+
+
+Let's say you have 100 million domains in your MySQL table, and you would like to update Alexa rank for each domain.
+
+First thing you need is to select your domain names from the database.
+
+Let's say your table name is domains and column name is domain.
+
+If you use SELECT domain FROM domains it's going to return 100 million rows which is going to consume lot of memory. So your server might crash.
+
+So you decided to run the program in batches. Let's say our batch size is 1000.
+
+In our first batch we will query the first 1000 rows, check Alexa rank for each domain and update the database row.
+
+In our second batch we will work on the next 1000 rows. In our third batch it will be from 2001 to 3000 and so on.
+
+Now we need a generator function which generates our batches.
+
+Here is our generator function:
+
+def ResultGenerator(cursor, batchsize=1000):
+    while True:
+        results = cursor.fetchmany(batchsize)
+        if not results:
+            break
+        for result in results:
+            yield result
+

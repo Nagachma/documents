@@ -1,0 +1,94 @@
+# importing libraries 
+import time 
+import math 
+
+# decorator to calculate duration 
+# taken by any function. 
+def calculate_time(func): 
+	
+	# added arguments inside the inner1, 
+	# if function takes any arguments, 
+	# can be added like this. 
+	def inner1(*args, **kwargs): 
+
+		# storing time before function execution 
+		begin = time.time() 
+		
+		func(*args, **kwargs) 
+
+		# storing time after function execution 
+		end = time.time() 
+		print("Total time taken in : ", func.__name__, end - begin) 
+
+	return inner1 
+
+# this can be added to any function present, 
+# in this case to calculate a factorial 
+@calculate_time
+def factorial(num): 
+
+	# sleep 2 seconds because it takes very less time 
+	# so that you can see the actual difference 
+	time.sleep(2) 
+	print(math.factorial(num)) 
+# calling the function. 
+factorial(10) 
+
+
+
+fun = (decorator(like ="geeks for geeks"))(func)
+obj_fun=(decorator(like ="geeks for geeks"))
+obj_fun(func) -- this parameter(i.e"func") will go to as a 
+parameter to the inner function
+
+ inner=decorator()
+
+
+def decorator(*args, **kwargs): 
+    print("Inside decorator") 
+    def inner(func): 
+        print("Inside inner function") 
+        print("I like", kwargs['like'])  
+        return func 
+    return inner 
+  
+@decorator(like = "geeksforgeeks") 
+def func(): 
+    print("Inside actual function") 
+  
+func() 
+
+
+
+
+==============================
+
+
+
+#Passing the function as an argument
+
+
+def shut(text):
+    return text.upper()
+
+def whisper(text):
+    return text.lower()
+
+def greet(func):
+    greeting =  func("i am passing through as a parameter")
+    print(greeting)
+greet(shut)
+greet(whisper)
+
+==========================================
+
+#Returning functions from another functions.
+
+def adder_in(y):
+    def adder_out(x):
+        return x+y
+    return adder_out
+
+add = adder_in(15)
+
+print(add(10))

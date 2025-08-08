@@ -1,0 +1,37 @@
+if it is iterable item we can go through list comprehenstion or filter or map or reduce 
+
+
+for returning list:::::::::::::::::::::::::::::::
+
+if it is single condition 
+
+nl = [i for i in range(0,10) if i%2==0]
+
+or 
+
+nl = list(filter(lambda x: (x % 2 == 0), list1))
+
+============================
+
+if it is multiple condition
+
+
+[repl_wrd if idx in word_list else idx for idx in Ip.split()]
+
+ip = "165.14.14.10"
+ns = ip.split(".")
+
+word_list = ["10",14,15]
+
+res = [True if idx in word_list else False for idx in ns]
+
+print(res)
+
+
+obj = ["Even" if i%2==0 else "Odd" for i in range(10)]
+===========================
+
+if we want return single value then we can go for reduce
+
+result1 = reduce((lambda x, y: x * y), [1,2,3])
+

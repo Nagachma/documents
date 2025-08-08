@@ -1,0 +1,19 @@
+
+
+loops with else block:
+Inside loop execution,if break statement not executed ,then only else part will be executed.
+
+
+else means loop without break(if there is no break in loop else will execute)
+
+scenario:if we want to know all condition are satisfied then we can use for else 
+
+
+cart = [1,4,5,6]
+
+for i in cart:
+    print(i)
+    if i>10:
+        break
+else:
+    print("there is no break in for loop ")

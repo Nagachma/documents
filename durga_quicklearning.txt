@@ -1,0 +1,58 @@
+argv using sys module to catch command line arguments
+
+saving two values from keyboard
+
+eval function to evaluate string and catch list,tuple,set from command line
+
+
+if there is one condition then we go for if , or more than we go for if elif ,example programms biggest and smallest numbers
+ 
+loops on for , while if we want perform action on object then we should for for or if we want ferform until a contion falls then we should go for elif
+
+if we want come out of loop then we should go for break , if we want skip some iteration then we should go for continue
+
+else with for and while loop , if break statement doesnt execute in loop then it will go else   
+
+find and index both will give index of substring , whereas substring doesnt exist in find it will give -1 and in index it will give valueerror 
+
+index,find,len,strip,cases,slicing,split,join,count,replace,isalpha,isdigit,isalnum,islower,isupper,isspace
+
+
+index, count,len,append,insert,remove,pop ,extend in list
+
+in set add for single element update for muliple elements , remove will remove a element if not will give keyerror in discard will not give error
+
+
+in dictionary d[] if key is not there it will give error , d.get(key) it will not give error , we can convert a list of tuple into dict
+
+
+function returning multiple values 
+
+ternary operators in python
+
+try,except,finally,else --else block will be executed if and only if there are no exceptions inside try block, final block will execute always 
+
+try ,else will execute same time
+
+userdefined exceptions : we have to inherts a class called Exception while using we ahve to use raise keyword
+
+threading , multitasking(separate programs),multithreading(same program of different parts) function based and class based threading available 
+
+synchronization in threading , multiple threads will be executed one by one so that we can overcome inconsistancy of data this can be acive by using lock ,rlock,semaphore
+
+oops: operator overriding :__add__(),method overriding :same method in base class and we are overriding in child class 
+
+method overloading(mutliple functions with same name different signatures in same class ) and method overriding(same method same signature in different parent and child class) 
+
+abstract method and abstract class , we ahve to import from abc module for abstract class ,abstract method with abstract class we cant inherit 
+
+From child class constuctor we can call parent class constructor by using super() method.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+here format == %
+
+// the bellow mentioned two lines are same
+print("{} {}".format("mallela","nagababu"))
+print("%s %s"%("mallela","nagababu"))

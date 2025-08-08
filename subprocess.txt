@@ -1,0 +1,12 @@
+it is used to connect to remote linux server and executing commands
+
+One main difference of Popen is that it is a class and not just a method. Thus, when we call subprocess.Popen, we're actually 
+calling the constructor of the class Popen
+ 	
+Method	Description
+Popen.poll()	Checks if the child process has terminated.
+Popen.wait()	Wait for the child process to terminate.
+Popen.communicate()	Allows to interact with the process.
+Popen.send_signal()	Sends a signal to the child process.
+Popen.terminate()	Stops the child process.
+Popen.kill()	Kills a child process.

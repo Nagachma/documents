@@ -1,0 +1,18 @@
+__all__ = ['Foo', 'bar']
+
+class Foo(object):
+    # ...
+
+def bar():
+    # ...
+
+def baz():
+
+
+if i use "import *" it will import only foo,bar , it will not import baz , if we want to import baz also then we need to use from module import baz
+
+__all__ doesn’t prevent any of the module symbols (functions, classes, etc.) from being directly imported. In our the example, the seemingly omitted baz function 
+(which is not included in __all__), is still perfectly importable by writing from module import baz.
+
+Similarly, __all__ doesn’t influence what symbols are included in the results of dir(module) or vars(module). So in the case above, a dir call would result in a 
+['Foo', 'bar', 'baz'] list, even though 'baz' does not occur in __all__.

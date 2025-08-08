@@ -1,0 +1,3 @@
+Pylint is a source-code, bug and quality checker for the Python programming language. 
+It is named following a common convention in Python of a "py" prefix, and a nod to the C programming lint program. 
+It follows the style recommended by PEP 8,

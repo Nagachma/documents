@@ -1,0 +1,27 @@
+sudo apt install apache2
+
+# to check installed version : apache -version
+# sudo ufw app list
+# sudo systemctl status apache2
+# sudo apt-get install libapache2-mod-wsgi python-dev
+# sudo apt-get install python-pip
+# pip install flask 
+# pip install flask_sqlalchemy
+
+
+
+sudo pip3 install virtualenv
+
+# testing installation virtual installation 
+
+virtualenv --version
+
+
+virtualenv --python=/usr/bin/python3.6 webapp
+
+
+cd webapp
+
+#Run this command to activate the working environment:
+
+source bin/activate

@@ -1,0 +1,57 @@
+shllowcopy(sort) : default copy is nothing but shallow copy , it is dependent if we do any changes in one object that will be reflect
+
+in another copy of object
+
+
+
+-->points to the same copy of the object  
+
+
+old_list = [[1, 2, 3], [4, 5, 6], [7, 8, 'a']]
+new_list = old_list
+
+new_list[2][2] = 9
+
+print('Old List:', old_list)
+print('ID of Old List:', id(old_list))
+
+print('New List:', new_list)
+print('ID of New List:', id(new_list))
+
+
+
+o/p
+
+Old List: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+ID of Old List: 140673303268168
+
+New List: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+ID of New List: 140673303268168
+
+-----------------------------------------
+
+deepcopy(instancemethod) : we should copy this as deepcopy.copy(object): this is independent if do any change in one object hat will not effect 
+
+in another copy of object
+
+
+import copy
+
+old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+new_list = copy.deepcopy(old_list)
+
+old_list[1][0] = 'BB'
+
+print("Old list:", old_list)
+print("New list:", new_list)
+
+
+
+o/p  :  Old list: [[1, 1, 1], ['BB', 2, 2], [3, 3, 3]]
+	New list: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+
+
+
+-------------------------------------------
+
+Shallow Copy stores the references of objects(same object) to the original memory address. Deep copy stores copies of the object's value

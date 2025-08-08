@@ -1,0 +1,24 @@
+#database_connection 
+
+
+pip install MySQLdb
+
+
+import mysqldb
+
+#open a database connectio
+db = mysqldb.connect("localhost","username","password")
+
+# prepare a cursor object using cursor() method
+cursor = db.cursor()
+
+#executing a quesry
+
+cursor.execute("select version")
+
+# fetching a single row
+data = cursor.fetchone()
+
+#disconnect from server
+
+db.close()

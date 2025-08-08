@@ -1,0 +1,11 @@
+it is a constructor 
+
+__init__ in inheritance
+
+if parent class and child class has both __init__ mehods , if we create child class object then child __init_ method will be called , if we want call parent 
+__init__ and child __init__ then we have to use super keyword in child class __init_ method , then both the constructors will be executed
+
+if we are inheriting two classes __init_ method into child class and we are using super keyword then MRO (Left side ) class method will be executed
+
+in the same way if have two same method names in parents class if we are calling by using child class object that time also left side method will be invoked
+

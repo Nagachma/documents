@@ -1,0 +1,16 @@
+#if we want make a list in single line then we can go for list comprehenstion
+
+ex : l1 = [x for x in range(0,6)]
+
+ex: listcomprehenstion with if and else, that result list we can make string with join method
+
+Ex:
+
+Ip = "Geeksforgeeks is best for geeks and CS"
+
+word_list = ["best", 'CS', 'for']
+
+repl_wrd = 'gfg'
+
+res = ' '.join([repl_wrd if idx in word_list else idx for idx in Ip.split()])
+ 

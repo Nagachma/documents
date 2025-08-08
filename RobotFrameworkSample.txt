@@ -1,0 +1,17 @@
+*** Settings ***
+Library     Collections
+Library     OperatingSystem
+
+*** Variables ***
+${student}
+${SYSTEM_USERNAME}
+${SYSTEM_PASSWORD}
+*** Test Cases ***
+input file
+    ${dict} =       Create Dictionary
+    ...             {{ SYSTEM_USERNAME }} = ${SYSTEM_USERNAME}
+    ...             {{ SYSTEM_PASSWORD }} = ${SYSTEM_PASSWORD}
+    log    ${dict}
+    :FOR                    ${i}    ${j}                    IN                      @{dict}
+    \                       Append To File          ${C:\Users\mallela.nagababu\Desktop\NP\s\spp\test1}/data.txt     ${i}    ${j}
+*** Keywords ***

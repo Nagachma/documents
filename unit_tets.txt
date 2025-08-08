@@ -1,0 +1,77 @@
+unit testing:
+the process of testing whether particular unit is working properly or not is called unit testing
+testing individual unit(like function) is nothing but unit testing
+
+Integratation testing :
+the process of testing total end to end 
+
+
+testing loging functionality -- test scenario:
+
+1. valid username and valid password -->TC1
+2. valid username and invalid password -->TC2
+3. invalid username and valid password -->TC3
+4. invalid username and invalid password -->TC4
+5. empty username and empty password -->TC5
+
+a single test scenario contains multiple tc's
+
+grouping all test cases into a single is called "SUIT"
+
+how to perform unittest in python
+
+we need to import unittest module, unit test module has a class Testcase in that testcase again contain 3 instance methods,
+
+we have to override these 3 instance method by inheriting testcase class
+
+1)setUp():browser (or) connecting server (or) connecting database like pre- reqirements
+2.test():setup before calling test method and tearDown after calling test method 
+3.tearDown():clenaing
+
+
+import unittest
+class Testdemo(unittest.TestCase):
+    def setUp(self):
+        print("Setup method execution")
+    def test_method1(self):
+        print("test_method1 method execution")
+    def test_method1(self):
+        print("test_method1 method execution")
+    def tearDown(self):
+        print("tearDown method execution")
+unittest.main()// this will call test case class
+
+setUp and teardown will execute for every testmethod before and after execution
+
+class methods
+
+setUpClass(cls):instead of executing common setup method for every test_method setUpClass(class method) method with will execute only once for all testmethods
+
+tearDownclass(cls): in the same way tearDownClass will be executed only once
+
+10 test methods
+
+setUp()--10 times
+tearDown()--10 times
+setUpClass--1 time
+tearDownClass--1 time
+
+class Testdemo(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        print("setUpClass method executed")
+    def setUp(self):
+        print("Setup method execution")
+    def test_method1(self):
+        print("test_method1 method execution")
+    def test_method1(self):
+        print("test_method1 method execution")
+    def tearDown(self):
+        print("tearDown method execution")
+    @classmethod
+    def tearDownClass(cls):
+        print("tearDownClass method executed")
+unittest.main()// this will call test case class
+ 
+
+Sup
