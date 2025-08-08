@@ -1,0 +1,139 @@
+There are 2 types of exceptions 
+
+1)pre defined exception 
+
+2)user defined exception
+
+An error which occur during execution time is noting but exception handling
+
+
+try: 
+
+Risky Code 
+
+except: will be executed if exception inside try 
+
+else: will be executed if there is no exception inside try 
+
+finally: will be executed whether exception raised or not raised and handled or not handled
+
+
+
+in python we can achive exception handling with try,except,finally,else
+
+try::::::::::::::risk code 
+
+except:::::::::::except block will execute if there is an exception in try block exceptions are like 
+
+ZeroDivisionError 
+TypeError 
+ValueError 
+FileNotFoundError 
+EOFError 
+SleepingError 
+TyrePuncturedError
+
+
+========================================================================================
+#if we want print exception we can use traceback or sys
+
+
+import traceback
+import sys
+
+
+#  print the full traceback without halting the program(just printing the error)
+try:
+    do_stuff()
+except Exception:
+    print("Error occured due to:",traceback.format_exc())
+    # or
+    print("error occured in :",sys.exc_info()[2])
+
+
+
+
+# print the full traceback with halting the program
+
+try:
+    do_stuff()
+except Exception as e:
+    print("Error occured due to:",traceback.format_exc())
+    # or
+    print("error occured in :",sys.exc_info()[2])
+    raise e
+
+
+==============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+finally:::::::::::::::this block will always execute if there is exception or not  
+ex:
+
+some cleanup code or closing the connection
+
+else::::::::::::::::this block will execute if there is no 
+
+Ex1)
+try:
+    print(a/b)
+except (ZeroDivisionError ,ValueError) as er:
+    print("please provide correct value",er)
+
+
+ex2)
+try:
+    print(a/b)
+except (ZeroDivisionError ,ValueError) as er:
+    print("please provide correct value",er)
+
+
+
+
+==============================
+
+
+user defined exceptions we can achive by raise keyword
+
+
+Ex)SYNTAX
+
+class classname(predefined exception class name):
+    def __init__(self,arg):
+        self.msg = arg
+
+
+class Tooyoung(Exception):
+    def __init__(self,msg):
+        self.msg = msg
+
+
+age=int(input("Enter Age:"))
+
+if age>60:
+   raise TooYoungException("Plz wait some more time you will get best match soon!!!")
+elif age<18:
+   raise TooOldException("Your age already crossed marriage age...no chance of getting marriage")
+else:
+   print("You will get match details soon by email!!!") 

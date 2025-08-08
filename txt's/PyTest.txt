@@ -1,0 +1,19 @@
+in pytest we are just checking functionality wheather true or false 
+
+
+we are calling the function if it is matches to our exception handling result 
+
+
+like pytest.raprse(someerror) as err:
+	function calling 
+
+
+if out error.value  is matches to our function expected result 
+
+===========================================
+
+with pytest(error) as err # this error should occur when call the bellow fun
+
+	downloadfunc# this is th fun to call
+
+asser exception should math the == function output

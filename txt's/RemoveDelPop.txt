@@ -1,0 +1,26 @@
+Remove:
+
+The remove() method removes the first matching value from the list.
+
+Syntax:
+
+list_name.remove(value)
+
+============================
+Delete:
+
+The del keyword delete any variable, list of values from a list. 
+
+Syntax:
+
+del list_name[index]  # To delete single value
+del list_name        # To delete whole list
+
+=============================
+
+pop() Method:
+The pop() method like del deletes value at a particular index. But pop() method returns deleted value from the list.
+
+Syntax:
+
+list_name.pop(index)

@@ -1,0 +1,145 @@
+like env variable , we have to set environment variable
+
+
+
+######################################
+On Windows:
+
+Command Prompt:
+
+set demoMode=value1
+set connectorAlias=value2
+set connectorConfigId=value3
+
+After setting these, you can run your Python script within the same Command Prompt session.
+
+PowerShell:
+
+$env:demoMode="value1"
+$env:connectorAlias="value2"
+$env:connectorConfigId="value3"
+
+After setting these, you can run your Python script within the same PowerShell session.
+
+#############################################
+On macOS and Linux:
+
+Temporary (for the current session):
+
+sh
+
+export demoMode=value1
+export connectorAlias=value2
+export connectorConfigId=value3
+
+After setting these, you can run your Python script within the same terminal session.
+
+##################################
+Permanent (for future sessions):
+
+Add the following lines to your shell configuration file (e.g., .bashrc, .bash_profile, .zshrc):
+
+sh
+
+export demoMode=value1
+export connectorAlias=value2
+export connectorConfigId=value3
+Then, reload the shell configuration:
+
+sh
+Copy code
+source ~/.bashrc  # or ~/.bash_profile, ~/.zshrc, depending on your shell
+From Within Python:
+You can also set environment variables directly from within your Python script:
+
+############################################
+python code
+import os
+
+demoMode = os.environ['demoMode']
+connectorAlias = os.environ['connectorAlias'] 
+connectorConfigId = os.environ['connectorConfigId'] 
+
+
+
+print("values are ", demoMode, connectorAlias, connectorConfigId)
+
+
+
+##############################
+
+
+setting env In PyCharm 
+
+
+Setting Environment Variables in PyCharm
+Open PyCharm.
+
+Open Your Project.
+
+Navigate to the Run/Debug Configurations:
+
+Go to the top right corner of the PyCharm window.
+Click the dropdown menu (usually displays the name of the current run configuration).
+Select "Edit Configurations..."
+Edit the Configuration:
+
+Select your script from the list on the left (under "Python" or whatever you named your configuration).
+Find the "Environment variables" field.
+Click the three dots ... to open the Environment Variables dialog.
+Add Environment Variables:
+
+In the dialog, add your variables:
+demoMode with value true
+connectorAlias with value databricks
+connectorConfigId with value 1
+Click "OK" to close the dialog.
+Apply and Run:
+
+Click "Apply" to save the configuration.
+Click "OK" to close the configuration window.
+Run your script.
+
+
+
+
+example code
+
+import os
+
+def fetchEnvironmentVariables(demoMode, connectorAlias, connectorConfigId):
+    # List of environment variables to check and assign
+    env_variables = ["demoMode", "connectorAlias", "connectorConfigId"]
+
+    # Check and assign each environment variable
+    for var in env_variables:
+        value = os.environ.get(var)
+        if value is None:
+            print(f"Environment variable '{var}' is not set.")
+        else:
+            if var == "demoMode":
+                demoMode = value
+            elif var == "connectorAlias":
+                connectorAlias = value
+            elif var == "connectorConfigId":
+                connectorConfigId = value
+
+    # Return the assigned variables
+    return demoMode, connectorAlias, connectorConfigId
+
+# Initialize variables to store values
+demoMode = None
+connectorAlias = None
+connectorConfigId = None
+
+# Fetch environment variables
+demoMode, connectorAlias, connectorConfigId = fetchEnvironmentVariables(demoMode, connectorAlias, connectorConfigId)
+
+# Print the values
+print("values are ", demoMode, connectorAlias, connectorConfigId)
+
+
+
+
+23) Which is standalone WSGI containers? A) GUNICORN B) TORNADO C) GEVENT D) GANNTT
+

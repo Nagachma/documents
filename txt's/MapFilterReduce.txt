@@ -1,0 +1,16 @@
+ip = "165.14.14.10"
+ns = ip.split(".")
+
+nlist = list(map(int,ns))
+print("map result is",nlist)
+fil = list(filter(lambda l:(l%2==0),nlist))
+print("filter result is",fil)
+red = reduce(lambda l,m:l+m,fil)
+print("reduce result is:",red)
+
+
+o/p:
+
+map result is [165, 14, 14, 10]
+filter result is [14, 14, 10]
+reduce result is: 38

@@ -1,0 +1,54 @@
+1xx: Informational
+It means the request has been received and the process is continuing.
+2xx: Success
+It means the action was successfully received, understood, and accepted.
+3xx: Redirection(if one server is not giving response it will redirect to another server)
+It means further action must be taken in order to complete the request.
+4xx: Client Error
+It means the request contains incorrect syntax or cannot be fulfilled.
+5xx: Server Error
+It means the server failed to fulfill an apparently valid request.
+
+
+if one application want to communicate with another application that time we want api that is nothing
+
+but rest api,api has 4 methods , get , post , put ,delete
+
+creating api 
+
+1)we need url nothing but server ip or server address
+
+base_url = "http://127.11.33.333/"
+
+2)folder or path
+path = 'api'
+
+3)using get method
+
+r = request.get(base_url+path+'1/')
+
+data= r.json
+print(data)
+print('status code:',r.status_code)
+
+2)using post method
+
+def create_resource():
+    
+    new_emp={
+      'eno':600
+      'enmae':'shive'
+      'esal':'6000'
+       }
+
+      r=request.post(base_url+path,data=new_emp)
+      print('status code:',r.status_code)
+      print('data is',r.text)
+
+
+create_resource()
+      
+
+
+
+

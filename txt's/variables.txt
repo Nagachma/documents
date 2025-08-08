@@ -1,0 +1,41 @@
+variables
+
+1)local
+2)global
+3)static
+4)class(cls)
+5)instance(self)
+6)private(__)
+7)protected(_)
+
+instance variables we can access in the class by using self variable and outside the class by using object, we can delete instance varable by using del object.var
+
+and those are not refleted to other objects
+
+static variable change will affect on every object where as instance vatiable change will  be affetct for particular variable
+
+static variable can declare inside constructor , instance method by using class name ,inside classmethod using cls variable or class name , inside staticmethod using class name
+
+*** if we want to perform operation on different object variables then we have to use magic methods like __add__(obj1,obj2)
+                                                                                                           obj1.a+obj2.a
+
+abstarct class can be instace if it even it is derived from ABC because that doesnt contain abstract method and we can create object when it is not extending ABC
+
+abstract class with abstract method instantiation is not possible
+
+from abc import *
+
+class Test(ABC)==
+
+In general if an abstract class contains only abstract methods such type of abstract class is considered as interface
+
+
+
+
+public anywhere
+
+protected with in the class and and in the child class , private variables outside the class by objname_classname__varible
+
+
+
+

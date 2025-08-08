@@ -1,0 +1,21 @@
+from collections import defaultdict
+
+"""The defaultdict tool is a container in the collections class of Python. It's similar to the usual dictionary (dict) container, but the only difference
+ is that a defaultdict will have a default value if that key has not been set yet.
+#counting duplicate values in a string by using defaultdict"""
+s = "mallela"
+d = defaultdict(int)
+
+for l in s:
+    d[l]+=1
+print(d.items())
+
+o/p :dict_items([('m', 1), ('a', 2), ('l', 3), ('e', 1)])
+
+#counting duplicate tuples in a list by using defaultdict
+
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+
+d = defaultdict(list)
+for k,v in s:
+	

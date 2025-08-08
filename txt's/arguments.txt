@@ -1,0 +1,41 @@
+1)positional arguments(a,b)(10,20)
+2)keyword arguments(name ,msg)(name="nagababu",msg="how are you")
+***We can use both positional and keyword arguments simultaneously. But first we have to take positional arguments and then keyword arguments,otherwise 
+we will get syntaxerror(a,name,msg)
+3)default arguments
+Sometimes we can provide default values for our positional arguments.
+wish(name="Guest")("nagababu")
+After default arguments we should not take non default arguments
+def wish(name="Guest",msg="Good Morning"): ===>Valid
+def wish(name,msg="Good Morning"): ===>Valid 
+def wish(name="Guest",msg): ==>Invalid
+4)variable length arguments
+After variable length argument,if we are taking any other arguments then we should provide values as keyword arguments
+def myFun(*argv):
+    for arg in argv:
+        print (arg)
+   
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')
+
+
+def myFun(**kwargs):
+    for key, value in kwargs.items():
+        print ("%s == %s" %(key, value))
+ 
+# Driver code
+myFun(first ='Geeks', mid ='for', last='Geeks')   
+
+
+
+lambda functions===
+syntax functionname = lambda variables:Expression
+s=lambda a,b:a+b 2)
+print("The Sum of 10,20 is:",s(10,20))
+
+filter
+We can use filter() function to filter values from the given sequence based on some condition.
+filter(function,sequence)
+where function argument is responsible to perform conditional check sequence can be list or tuple or string.
+
+reduce 
+this will return a single value

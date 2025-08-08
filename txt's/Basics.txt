@@ -1,0 +1,6 @@
+# for getting path
+
+>>> import sys
+>>> sys.executable
+'C:\\Users\\nagababu.mallela\\AppData\\Local\\Programs\\Python\\Python310\\python.exe'
+

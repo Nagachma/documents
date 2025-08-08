@@ -1,0 +1,94 @@
+import paramiko
+import sys
+
+nbytes = 4096
+hostname = 'hostname'
+port = 22
+username = 'username' 
+password = 'password'
+command = 'ls'
+
+client = paramiko.Transport((hostname, port))
+client.connect(username=username, password=password)
+
+
+# SSH to remote
+
+ ssh = paramiko.SSHClient()   
+ ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+# connection with password 
+ssh.connect(hostname=url, username=str(username),password=str(password), timeout= 20)
+
+# connection with ppk
+ssh.connect(hostname=url, username=str(username), pkey=k,timeout=20)
+
+
+# copying files to remote machine
+scp.put(local_script_path,remote_path=remote_script_path, recursive=True)
+
+# executinf command in remote machine
+stdin, stdout, stderr = ssh.exec_command(logparser_cmd,get_pty=True)
+
+
+===========================================
+
+
+from scp import SCPClient
+
+
+# Copying CSVs from Remote to Local 
+
+with SCPClient(ssh.get_transport(), sanitize=lambda x: x) as scp:
+                scp.get(remote_path=config['SSH_CONFIG']['REMOTE_TMP_MAIN'] + "/infa_log_metrics_{}.csv".format(csv_date), local_path=config['SSH_CONFIG']['LOCAL_ABS_PATH'] + config['LOG_PARSER_TMP_DIR'] + "/{}_logparser_informatica_metrics_{}.csv".format(url,csv_date))
+                scp.get(remote_path=config['SSH_CONFIG']['REMOTE_TMP_MAIN'] + "/infadboutput_{}.csv".format(csv_date), local_path=config['SSH_CONFIG']['LOCAL_ABS_PATH'] + config['INFA_DB_TMP_DIR'] + "/{}_infadb_informatica_metrics_{}.csv".format(url,csv_date))
+            
+            ssh.close()
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+example script
+
+import paramiko
+
+# Define the remote host and login credentials
+hostname = '10.70.10.25'  # Ensure this is a valid IP or hostname
+port = 22  # Ensure this is the correct port
+username = 'orchestrai_read_user'
+password = 'hK9!tZdMl'
+
+# Define the shell script you want to execute
+shell_script = """
+#!/bin/bash
+echo "This is a sample shell script execution"
+date
+uptime
+"""
+
+# Initialize the SSH client
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+try:
+    # Connect to the remote host
+    ssh.connect(hostname=hostname, port=port, username=username, password=password)
+
+    # Execute the shell script
+    stdin, stdout, stderr = ssh.exec_command(shell_script)
+
+    # Print the outputs
+    print("Standard Output:")
+    for line in stdout.readlines():
+        print(line, end="")
+
+    print("\nStandard Error:")
+    for line in stderr.readlines():
+        print(line, end="")
+finally:
+    # Close the connection
+    # sh.close()
+    stdin.close()
+    stdout.close()
+    stderr.close()
+    ssh.close()

@@ -1,0 +1,200 @@
+1)dictionary comprehension  # 
+2)list comprehension ##it provides a more compact and readable way of creating a new list object
+3)difference between append and extend # extend will take only iterable object and add values in the list , wheare as append will add values in the as a list inside list 
+4)opbership)erators (special ,mem
+5)sorting keys from dict
+6)write a program to reverse the string
+7)spliting a string and combing it
+ip = "165.14.14.1"
+name=ip.split(".")
+for item in name:
+    output = "".join(item)
+op="".join(name)
+print(op)
+print(output)
+8)types of arguments # positional arg, default arg , keyword arg
+9)logging levels in python (critical,debug,error,warning , info)
+10)map,reduce,filter
+11)decorator,genarator,iterator
+12)if os.path.isfile(fname):
+   for line in f: 
+       lcount=lcount+1 
+       ccount=ccount+len(line) 
+       words=line.split()
+13)pickle.dump(object,filename)=pickling=converting a object into file ==it stored in a file
+
+14)obj=pickle.load(filename) == it stored in a object
+15)[7-9]\d{9} mobile number regular expressions
+16)how we can access private varibles in python
+17)classmethod vs staticmethod , instance method
+18)class variable , instance varible
+instance variables are different for for different objects  , if we want same value for all objects then we use class variables
+19)Passing members of one class to another class:
+20)difference between sort(classmethod) and sorted(instancemethod) 
+
+sort will return nothing ,original value(iterable) will change,and use the same object(iterable)
+
+where as sorted  will return iterable object , original value will remain same
+
+
+21)Types of Constructors
+22)The any() function returns True if any item in an iterable are true, otherwise it returns False
+
+mylist = [False, True, False]
+x = any(mylist)
+
+o/p :True
+
+An interpreted language is any programming language which is not in machine-level code before runtime. Therefore, Python is an interpreted language.
+
+
+
+PEP stands for Python Enhancement Proposal. It is a set of rules that specify how to format Python code for maximum readability.
+
+
+A namespace is a naming system used to make sure that names are unique to avoid naming conflicts
+
+A namespace in python refers to the name which is assigned to each object in python. The objects are variables and functions. As each object is created, its name along with space(the address of the outer function in which the object is), gets created. The namespaces are maintained in python like a dictionary where the key is the namespace and value is the address of the object. There 4 types of namespace in python
+
+
+
+Memory management in python is managed by Python private heap space. All Python objects and data structures are located in a private heap. The programmer does not have access to this private heap. The python interpreter takes care of this instead.
+
+
+
+ Functions that return an iterable set of items are called generators.
+
+23)
+
+The frozenset() is an inbuilt function is Python which takes an iterable object as input and makes them immutable. Simply it freezes the iterable objects and makes them unchangeable
+
+fruits = {"Apple", "Banana", "Cherry", "Apple", "Kiwi"}
+basket = frozenset(fruits)
+
+print('Unique elements:', basket)
+
+# Add new fruit throws an error!
+basket.add("Orange")
+print('After adding new element:', basket)
+
+basket1 = fruits 
+
+# Add new fruit will not throws an error
+basket1.add("Orange")
+print('After adding new element:', basket)
+
+24) does python support overloading 
+
+no python doesn't support overloading
+
+25) what is __new__ method in python
+
+Python calls the __new__() method to create the object first and then calls the __init__() method to initialize the object's attributes.
+
+26)what is __str__ method in python
+
+We'll then call this method using the built-in Python function, str(),Classes can utilize the __str__() method to express class objects as strings. 
+
+class Tutorial:
+    #lets pass two arguments into the __init__ function
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    #using the __str__() method we return the values passed into the x and y arguments.
+    def __str__(self):
+        result = self.x + ' ' + str(self.y)
+        return result
+
+tuts = Tutorial("Boys", "Scout")
+print(str(tuts))
+
+27) Using the __repr__() method, we can create a custom string representation of our class objects.
+
+#We will create the class Tutorial
+class Tutorial:
+    #the init function will receive two argument - name and sex.
+    def __init__(self, name, sex):
+        self.name = name
+        self.sex = sex
+
+    def __repr__(self):
+        result = self.name + ' is a  ' + str(self.sex)
+        return result
+
+
+# Let's make a Person object and print the results of repr()
+
+tuts = Tutorial("Michael Jackson", "Male")
+print(repr(tuts))
+
+1)recursion function 
+
+2)multiprocessing with example
+
+
+a = "hai i am naga"
+
+
+my_dec(fun):
+	def inner(*args,**kwargs):
+		vow = ['a','e','i','o','o']
+		l1 = fun(*args,**kwargs)
+		nl = []
+		for i in l1:
+ 			for j in i:
+				if j in vow:
+					nl.append(j)
+		lc = [i for i in l1 if i in vow]
+		return inner
+
+
+@my_dec
+def fun(a):
+	return a.split(" )
+
+
+
+
+
+
+
+
+
+
+a = "there are 2 apples and 5 orange"
+
+l1 = a.split(" ")
+
+es = "
+
+dic = {"1":"one","2":"two","3":"three","4":"four","5":"five"}
+
+for i in l1:
+	if i in edic.keys()
+		es = edic[i]
+	esle:
+ 		es = es+ i
+	
+
+a = [[], "abc", [0], 1, 0]
+print(list(filter(bool, a)))
+
+
+class a():
+	def __init__(self,name):
+		self.name = name
+
+class b(a):
+	def __init__(self,name,age):
+		self.age = age
+		super().__init__(name)
+class c(a):
+	def __init__(self,name,loc):
+		self.loc = loc
+		isins
+		super().__init__(name)
+
+
+
+
+
