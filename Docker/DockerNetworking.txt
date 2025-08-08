@@ -1,0 +1,10 @@
+Docker will have different drivers to work 
+
+bridge network is default network driver , standalone applications will work on bridge network 
+
+host driver it will run on docker swarm 
+
+docker default network 172.17.0.1/16
+
+
+docker will have docker 0 bridge which will create virtual IP's(like 172.17.0.2,172.17.0.3,172.17.0.4) respectively for container app1,container app2,container app3,  and our local system ip will connect to those virtual IP's 0MH$kfd>)M2doY4rp#aQ_H8ShOhYDI

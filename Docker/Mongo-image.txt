@@ -1,0 +1,43 @@
+####################image fetching################################
+
+############with command 
+# start mongodb (it will pull the image from dockerhub, image name is mongo )
+  docker run -d \
+> -p 27017:27017 \
+> -e MONGO_INITDB_ROOT_USERNAME=admin \
+> -e MONGO_INITDB_ROOT_PASSWORD=supersecret \
+> --network mongo-network \
+> --name mongodb \
+> mongo
+
+###########with compose.yaml
+
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=supersecret
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo-network
+	  
+  mongodb:
+    image: mongo-express
+    container_name: mongodb
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=supersecret
+	  - ME_CONFIG_MONGODB_SERVER=mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo-network
+
+networks:
+  mongo-network:
+    driver: bridge

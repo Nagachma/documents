@@ -1,0 +1,8 @@
+# Install docker in ubantu
+
+sudo docker start app-vmmonitoring-container
+sudo docker start app-vmmonitoring-container
+sudo docker start app-vmmonitoring-container
+
+
+https://docs.docker.com/engine/install/ubuntu/

@@ -1,0 +1,25 @@
+Docker need to be install as a part of developing application , developers are developing in different env like windows,linux,mac so when try to run the application in different env compatability issues are occuring 
+
+
+to overcome this they are installing docker engine and and creating container and that container is same for all,
+
+to run that container a docker image will be created and all linux machine , windows machine , mac os developers will develop the code on same environment
+
+whereever deploy the code there also docker engine and container will be installed 
+
+now the code will run seamlessly on all flatforms 
+
+============================================================================================
+
+if we install the docker in vm we can create container(like web app, db app, app) with the use of single machine 
+
+else we need to create apps (like web app, db app, app) in 3 different machines like (web app in one vm, db app in one vm, app in one vm)
+
+
+============================================================================================
+
+
+
+in a server nginx application is installed then it is capable of running websites and it is called web server 
+
+=

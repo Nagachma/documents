@@ -1,0 +1,7 @@
+Docker vs Kubernetes
+
+docker cannot scaleup, deployment , development automatically
+
+Kubernetes is the one which manages the orchestration of docker containers 
+
+kebernetes will create services between apps(webapp,dbapp) to connect each other 

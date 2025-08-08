@@ -1,0 +1,153 @@
+login as: aip_nagababu.mallela
+Pre-authentication banner message from server:
+| |-----------------------------------------------------------------|
+| | This system is for the use of authorized users only.            |
+| | Individuals using this computer system without authority, or in |
+| | excess of their authority, are subject to having all of their   |
+| | activities on this system monitored and recorded by system      |
+| | personnel.                                                      |
+| | In the course of monitoring individuals improperly using this   |
+| | system, or in the course of system maintenance, the activities  |
+| | of authorized users may also be monitored.                      |
+| | Anyone using this system expressly consents to such monitoring  |
+| | and is advised that if such monitoring reveals possible         |
+| | evidence of criminal activity, system personnel may provide the |
+| | evidence of such monitoring to law enforcement officials.       |
+| |-----------------------------------------------------------------|
+End of banner message from server
+aip_nagababu.mallela@10.248.13.111's password:
+login as: aip_nagababu.mallela
+aip_nagababu.mallela@10.248.13.111's password:
+Last login: Fri Mar 22 10:55:06 2024 from 10.254.252.230
+Authorized uses only. All activity may be monitored and reported.
+0(aip_nagababu.mallela@dockerdev-ng [~])$ ls
+0(aip_nagababu.mallela@dockerdev-ng [~])$ git clone https://aipplus@dev.azure.com/aipplus/OrchestrAI/_git/tenant-connectors
+Cloning into 'tenant-connectors'...
+Password for 'https://aipplus@dev.azure.com':
+remote: Azure Repos
+remote: We noticed you're using an older version of Git. For the best experience, upgrade to a newer version.
+remote: Found 968 objects to send. (49 ms)
+Receiving objects: 100% (968/968), 1.01 MiB | 0 bytes/s, done.
+Resolving deltas: 100% (229/229), done.
+0(aip_nagababu.mallela@dockerdev-ng [~])$ ls
+tenant-connectors/  tenant-connectors-old/  tenant-connectors-old-1/
+0(aip_nagababu.mallela@dockerdev-ng [~])$ cd tenant-connectors
+0(aip_nagababu.mallela@dockerdev-ng [~/tenant-connectors])$ ls
+modules/  README.md
+0(aip_nagababu.mallela@dockerdev-ng [~/tenant-connectors])$ git checkout devel
+Branch devel set up to track remote branch devel from origin.
+Switched to a new branch 'devel'
+0(aip_nagababu.mallela@dockerdev-ng [~/tenant-connectors])$ ls
+azure-pipeline.yaml  doc/  docker/  modules/  README.md
+0(aip_nagababu.mallela@dockerdev-ng [~/tenant-connectors])$ sudo docker build -f docker/APP-GLOBAL/Dockerfile -t registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest .
+[+] Building 17.3s (19/19) FINISHED                                                                                                           docker:default
+ => [internal] load .dockerignore                                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                         0.0s
+ => [internal] load build definition from Dockerfile                                                                                                    0.0s
+ => => transferring dockerfile: 4.88kB                                                                                                                  0.0s
+ => [internal] load metadata for registrydev.dockertest.accentureanalytics.com/aipinternal/aipbase-ubuntujammy:main                                     0.0s
+ => [ 1/14] FROM registrydev.dockertest.accentureanalytics.com/aipinternal/aipbase-ubuntujammy:main                                                     0.0s
+ => [internal] load build context                                                                                                                       0.0s
+ => => transferring context: 336.07kB                                                                                                                   0.0s
+ => CACHED [ 2/14] COPY     docker/APP-GLOBAL/scripts /root/scripts/                                                                                    0.0s
+ => CACHED [ 3/14] COPY     docker/APP-GLOBAL/misc /root/misc/                                                                                          0.0s
+ => CACHED [ 4/14] COPY     docker/APP-GLOBAL/misc/etc/cron.d /etc/cron.d/                                                                              0.0s
+ => CACHED [ 5/14] RUN chmod 755 /root/scripts/*.sh                                                                                                     0.0s
+ => CACHED [ 6/14] RUN apt-get update                                                                                                                   0.0s
+ => CACHED [ 7/14] RUN apt-get install -y curl wget gnupg vim-tiny bc vim mysql-client                                                                  0.0s
+ => CACHED [ 8/14] RUN rm -rf /var/tmp/* /var/cache/apt/* /tmp/*                                                                                        0.0s
+ => CACHED [ 9/14] RUN adduser consvc                                                                                                                   0.0s
+ => [10/14] COPY modules/APP /tmp/APP                                                                                                                   0.1s
+ => [11/14] RUN mkdir -p /home/consvc/APP &&     find /tmp/APP ! -path "*doc*" ! -path "*examples*" ! -path "*test*" -prune -exec cp -r {} /home/consv  0.3s
+ => [12/14] RUN chmod -R 755 /home/consvc/APP/* &&     chown -R consvc:consvc /home/consvc/                                                             0.4s
+ => [13/14] RUN pip3 install -r /root/misc/requirements.txt                                                                                            14.5s
+ => [14/14] RUN rm -f /etc/supervisord.d/custom_script.conf /etc/supervisord.d/startupconfig.conf                                                       0.3s
+ => exporting to image                                                                                                                                  1.6s
+ => => exporting layers                                                                                                                                 1.6s
+ => => writing image sha256:ce3cb2130b42905a496892da7f4c04c0ef45e3b431f85dc0bdc79d74d48de32b                                                            0.0s
+ => => naming to registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest                                              0.0s
+0(aip_nagababu.mallela@dockerdev-ng [~/tenant-connectors])$ sudo docker run --tty --interactive --name test-connector-app-global-naga registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest
+2024-03-25 06:26:42,573 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-03-25 06:26:42,573 WARN No file matches via include "/etc/supervisord.d/*.ini"
+2024-03-25 06:26:42,573 INFO Included extra file "/etc/supervisord.d/crond.conf" during parsing
+2024-03-25 06:26:42,573 INFO Included extra file "/etc/supervisord.d/supervisord.conf" during parsing
+2024-03-25 06:26:42,579 INFO RPC interface 'supervisor' initialized
+2024-03-25 06:26:42,579 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2024-03-25 06:26:42,579 INFO supervisord started with pid 1
+2024-03-25 06:26:43,582 INFO spawned: 'supervisor_stdout' with pid 13
+2024-03-25 06:26:43,583 INFO spawned: 'crond' with pid 14
+2024-03-25 06:26:43,599 INFO success: supervisor_stdout entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+2024-03-25 06:26:43,599 INFO success: crond entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+2024-03-25 06:26:43,699 INFO exited: crond (exit status 0; expected)
+2024-03-25 06:26:44,701 INFO spawned: 'crond' with pid 24
+2024-03-25 06:26:45,703 INFO success: crond entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+
+
+
+
+
+1) clone the repo
+2) git checkout branch(the branch which we want to make a docker file)
+3) sudo docker build -f docker/APP-GLOBAL/Dockerfile -t registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest .
+4) sudo docker run --tty --interactive --name test-connector-app-global-naga registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest
+
+
+duplicate session
+
+1)sudo su
+2)docker exec -it test-connector-app-global-naga /bin/bash
+3)su - consvc
+4)python3 main.py
+
+
+
+
+=====================================================
+
+sudo docker build -f docker/APP-GLOBAL/Dockerfile -t registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest .
+
+it will create the image with file "docker/APP-GLOBAL/Dockerfile" and 
+
+
+
+push it to repository "registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest ."
+
+------------------------------------------------------------------------------------
+
+sudo docker run --tty --interactive --name test-connector-app-global-naga registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest     
+
+it will create the conainer based image 
+
+container name : test-connector-app-global-naga
+
+and Specifies the image name and tag from which to create the container. : registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest 
+
+---------------------------------------------------------------------
+
+docker exec -it test-connector-app-global-naga /bin/bash
+
+it will start an interactive Bash shell session inside the specified container (test-connector-app-global-naga), allowing you to run commands as if you were directly logged into the container's shell.
+
+docker exec: This is the Docker command for executing commands inside a container
+
+test-connector-app-global-naga: This is the name of the container you want to execute the command in. Replace it with the actual name of your container.
+
+
+-------------------------------------------------------------------
+
+if you want to push the image then 
+
+
+sudo docker push registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest
+
+
+
+--------------------------------------------------------------------
+
+
+if you want to pull the images from repo 
+
+docker pull registrydev.dockertest.accentureanalytics.com/aipinternal/oai-connector-app-global:latest
+
+
+

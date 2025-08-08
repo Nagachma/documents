@@ -1,0 +1,26 @@
+1)install the docker 
+2) run the image :if image exists it will run the image else it will pull the image from docker hub or registry
+    docker run image_name
+
+3) docker ps  : to check running images status
+
+4) docker images : to list all the images 
+
+5) docker rmi image_name : to remove image 
+
+6) docker pull centos : it will just pull the image 
+
+7) docker run it image_name or docker run it image_name /bin/bash(to run in bash mode): it will allow us to enter into the image
+
+8) docker run -d image_name sleep 100 : after 100 sec it will be in sleep mode
+
+9) docker run image_name cat /etc/hostname : it will print the hostname
+
+=======================================
+ex) 
+
+1) docker run jenkins : it will pull the image and run
+
+2) docker run -p 80:8080 jenkins : it will  assign 80 port tp 8080
+
+3) after assigning this we can access from our browser with 8080 prt
