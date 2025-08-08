@@ -1,0 +1,73 @@
+1) after group by condition we can use having clause , before group by we can use where clause 
+
+
+ex) group by status having count(*)>5  == means getting result after grouping who's count is morethan 5 
+
+1) what is normalization
+
+Normalization is a database design technique to remove redundant data
+
+(ex: redundant data in a table like India , Ind, Austrilia , Aus )
+
+Normalization can be implement by splitting one table into two tables, one with reference(master data) and other transaction data
+
+2) what is denormalizaion 
+
+Denormalization is a database design technique to improve search performance, here we merge the tables and ok to have duplicate data 
+
+3) what is oltp(online transactional processing) and olap(online analytical programming) ?
+
+in high volumes milions of records database people will create 2 databases one is OLTP(for Insert , update , delete) and another is OLAP(for Select , read)
+
+in OLTP we can go for Normalization to avoid redundancy and in OLAP we can go for denormalization to improve search performance
+
+4) what is 1st ,2nd,3rd Normalization Forms 
+
+
+1st Normalization : A table in the first normal form when the columns have atomic values(morethan one value in single row) or it should not have repeating groups
+
+
+2nd Normalization : First normal form should be satisfied , All non-key columns should be fully dependent on the primary key
+
+3rd Normalization : all 1st and 2nd normal should be satisfied , No transient dependency should be present 
+
+
+5) difference between primary key and unique key 
+
+
+both will not allow duplicates , unique key can have null values but primary key not  
+
+6) differnce between Char and Varchar
+
+Char is fixed and Varchar is Variable length 
+
+  
+for char if we have char(aa) or char(aaa) if we give length 3, it will take 3 char for both aa and aaa
+
+for varchar if we have varchar(aa) or varchar(aaa) if we give length 3, it will take 2 char for  aa and 3 char for aaa
+
+
+7) what is difference b/w char and Nchar
+
+Nchar is for unicode Non english(other language like chinese , japanese etc...) and Nchar will take 2 bytes for 1 char
+
+8) what are indexes 
+
+indexes are increase the search performance 
+
+when we create a index it will create nodes ,leaf nodes , b trees etc...... like if we have 100 then split  to nodes 1 to 50 and 50 to 100 
+
+9) what are 2 types of indexes 
+
+cluster index and non cluster index
+
+
+10) diff b/w cluster index and non cluster index 
+
+cluster index : leaf node points to the actual data 
+
+non cluster index : leaf node point to the cluster index then actual data 
+
+11) what are triggers 
+
+triggers small peace of logic which we want to execute when certain events like insert , update , delete operations happend 

@@ -1,0 +1,70 @@
+1) Write a query to get the current date.
+SELECT SYSTDATE(); or Select GETDATE();
+2)Write a query to retrieve the first four characters of  EmpLname from the EmployeeInfo table
+SELECT SUBSTRING(EmpLname, 1, 4) FROM EmployeeInfo;
+3)Write a query to fetch only the place name(string before brackets) from the Address column of EmployeeInfo table.
+SELECT SUBSTRING(Address, 1, CHARINDEX('(',Address)) FROM EmployeeInfo;
+4)Write a query to create a new table which consists of data and structure copied from the other table.
+CREATE TABLE NewTable AS SELECT * FROM EmployeeInfo;
+5)Write a query to fetch top N records.
+By using the TOP command in SQL Server:
+
+1
+SELECT TOP N * FROM EmployeePosition ORDER BY Salary DESC;
+By using the LIMIT command in MySQL:
+
+1
+SELECT * FROM EmpPosition ORDER BY Salary DESC LIMIT N;
+
+6)Write a query to retrieve the EmpFname and EmpLname in a single column as “FullName”. The first name and the last name must be separated with space.
+1
+SELECT CONCAT(EmpFname, ' ', EmpLname) AS 'FullName' FROM EmployeeInfo;
+7)Write a query to fetch details of employees whose EmpLname ends with an alphabet ‘A’ and contains five alphabets.
+To fetch details mathcing a certain value, you have to use the LIKE operator in SQL.
+
+1
+SELECT * FROM EmployeeInfo WHERE EmpLname LIKE '____a';
+8)Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.
+1
+SELECT * FROM EmployeeInfo WHERE EmpFname NOT IN ('Sanjay','Sonia');
+
+
+
+
+--insert into dbo.Customers values(102,'ghi','hgi',2000)
+--select * from dbo.Orders
+--select * from dbo.Customers
+
+--select first_name from dbo.Customers LIMIT 2;
+
+--alter table dbo.Orders add order_address varchar(16);
+
+--update dbo.Orders set order_address='che' where customer=104
+
+--Select LEN('SUDHAKAR') 
+
+--SELECT * from dbo.Orders;
+
+--SELECT * from dbo.Orderss;
+
+truncate table dbo.Orderss;
+
+drop table dbo.Orderss;
+
+--SELECT * from dbo.Orderss;
+
+--SELECT order_address, COUNT=COUNT (*) FROM dbo.Orders GROUP BY order_address 
+
+
+--select count(order_address) from dbo.Orders
+--select * from GROUP BY order_address
+
+--alter table dbo.Orders add package_name varchar(15)
+
+--alter table dbo.Orders drop  column package_name
+
+--select * into orderss from dbo.Orders
+
+
+
+

@@ -1,0 +1,28 @@
+#AND , OR , NOT
+
+SELECT first_name, last_name FROM Customers;
+SELECT * FROM Customers;
+SELECT * FROM Customers WHERE last_name = 'Doe';
+SELECT age, country FROM Customers WHERE country = 'USA';
+SELECT * FROM Customers WHERE first_name = 'John';
+SELECT * FROM Customers WHERE age > 25;
+SELECT * FROM Customers WHERE last_name = 'Doe' AND country = 'USA';
+
+
+#DISTINCT
+
+SELECT DISTINCT country FROM Customers;
+SELECT DISTINCT country, first_name FROM Customers
+SELECT COUNT(DISTINCT country) FROM Customers;
+
+#SELECT AS Alis
+
+SELECT first_name AS name FROM Customers;
+SELECT customer_id AS cid, first_name AS name FROM Customers;
+
+
+
+#SQL LIMIT, TOP and FETCH FIRST
+SELECT TOP 2 * FROM Customers;
+
+SELECT first_name, age FROM Customers LIMIT 1;

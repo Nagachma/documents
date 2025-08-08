@@ -1,0 +1,77 @@
+-- create a table
+CREATE TABLE tblEmp(id int primary key,name varchar not null,loc varchar not null);
+
+INSERT INTO tblEmp VALUES (1, 'ram', 'M');
+INSERT INTO tblEmp VALUES (2, 'kiram', 'M');
+INSERT INTO tblEmp VALUES (3, 'shyam',"M");
+
+
+update tblEmp SET name="hanuma" where name="kiram";
+
+delete from tblEmp where id=3;
+
+select * from tblEmp;
+
+
+select count,min,max,sum,avg(id) from tblEmp;
+
+select age from TblEmployee limit 1:
+
+
+SELECT * FROM tblEmp WHERE name IN ('ram', 'kiram');
+
+
+SELECT * FROM tblEmp WHERE id BETWEEN 1 AND 2;
+
+
+SELECT *
+FROM Customers
+ORDER BY first_name;
+
+
+# group by can only apply on agrregate functions , here counting paricular gender count like how may males and and howmay females 
+
+--select Gender, COUNT=COUNT (*) FROM tblstudent GROUP BY Gender
+
+
+# these both are same : [sum(marks) as "sum"] == [sum = sum(marks)]
+
+select Gender ,sum(marks) as "sum" from tblstudent group by Gender  
+
+select Gender, sum = sum(marks) FROM tblstudent GROUP BY Gender
+
+# return only minium value 
+
+select min(age) from tblstudent
+
+# return whole single row()with all column data with minimum age 
+
+SELECT *
+FROM Customers
+WHERE age = (
+  SELECT MIN(age)
+  FROM Customers
+);
+
+
+# like operator query's
+
+%	It is used to match any string of any length (including zero length).
+
+_	It is used to match on a single character.
+
+[ ]	It is used to match on any character in the [ ] brackets (for example, [abc] would match on a, b, or c characters)
+
+[^]	It is used to match on any character not in the [^] brackets (for example, [^abc] would match on any character that is not a, b, or c characters)
+
+
+select * from tblstudent where age like '%0'
+
+select * from tblstudent where name like '___'  #it will three letter word as it has three ___(dashes)
+
+
+# for getting top nth salary from tbl emp
+
+select Top 1 salary from(select DISTINCT TOP 3 salary from employee ordr by salary desc) tblemp Order by salary
+
+
